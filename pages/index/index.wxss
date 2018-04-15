@@ -1,0 +1,19 @@
+/**index.wxss**/
+#home-logo{
+  width: 128px;
+  height:128px;
+}
+
+.search-input{
+  border-bottom: 1px solid #eee;
+}
+
+.search-button{
+  margin-top:10px;
+}
+
+.buttom-text {
+  position: fixed;
+  bottom: 40px;
+  font-size:14px;
+}
