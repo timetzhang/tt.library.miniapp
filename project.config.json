@@ -40,6 +40,12 @@
 					"name": "SearchList",
 					"pathName": "pages/list/list",
 					"query": "keyword=9"
+				},
+				{
+					"id": 1,
+					"name": "add",
+					"pathName": "pages/add/add",
+					"query": "keyword=9787532742189"
 				}
 			]
 		}

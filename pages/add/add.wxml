@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class="container">
+<view class="row">
+    <image class="image" src='{{book.image}}'></image>
+  </view>
+  <view class="row">
+    <view class="title">书名:</view>
+    <input class="input-text" type='text' value='{{book.name}}' />
+  </view>
+  <view class="row">
+    <label class="title">作者:</label>
+    <input class="input-text" type='text' value='{{book.author}}' />
+  </view>
+  <view class="row">
+    <label class="title">价格:</label>
+    <input class="input-text" type='text' value='{{book.price}}' />
+  </view>
+  <view class="row">
+    <label class="title">出版社:</label>
+    <input class="input-text" type='text' value='{{book.publisher}}' />
+  </view>
+  <view class="row">
+    <label class="title">出版时间:</label>
+    <input class="input-text" type='text' value='{{book.year}}' />
+  </view>
+  <view class="row">
+    <label class="title">详情:</label>
+     <input class="input-text" type='text' value='{{book.details}}' />
+  </view>
+  <view class="row">
+    <label class="title">类型:</label>
+    <input class="input-text" type='text' value='{{book.type}}' />
+  </view>
+  <view class="row">
+    <label class="title">是否在库:</label>
+    <input class="input-text" type='text' value='{{book.status}}' />
+  </view>
+  <view class="row">
+    <label class="title">书籍位置:</label>
+    <input class="input-text" type='text' value='{{book.place}}' />
+  </view>
+  
+  <view class="info">请核对以上信息，如果正确，请点击添加</view>
+  <button class="btn-add" bindtap='bindTapAdd'>添 加</button>
+</view>

@@ -1,0 +1,32 @@
+/**index.wxss**/
+.container{
+  padding-top:5px;
+  font-size: 15px; 
+}
+
+.image{
+  width:200px;
+  height:180px;
+}
+
+.input-text{
+  line-height: 30px;
+}
+
+.title{
+  color:#888;
+}
+
+.row{
+  padding-top:10px;
+}
+
+.info{
+  font-size:14px;
+  margin:20px 0 20px 0;
+  color:#888;
+}
+
+.btn-add{
+  width: 200px;
+}

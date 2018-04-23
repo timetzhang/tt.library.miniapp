@@ -16,6 +16,11 @@ Page({
             books: res.data
           });
         }
+        else {
+          wx.navigateTo({
+            url: '../add/add?keyword=' + options.keyword
+          })
+        }
       }
     })
   }

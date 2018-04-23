@@ -10,13 +10,13 @@
         <text class="author">{{item.author}}</text>
       </view>
       <view class="details">
-        <text>{{item.details}}</text>
+        <text>{{item.details == null ? '' : item.details }}</text>
       </view>
       <view>
-        <text class="publisher">{{item.publisher}} / {{item.year}} / {{item.price}} 元</text>
+        <text class="publisher">{{item.publisher == null || item.publisher == '' ? '' : item.publisher + ' / '}}  {{item.year == null || item.year == '' ? '' : item.year + ' / '}} {{item.price == null ? '' : item.price}} 元</text>
       </view>
       <view>
-        <text class="status"> {{item.status == 0 ? '借出' : '在库'}} / {{item.place}}</text>
+        <text class="status"> {{item.status == 0 ? '借出' : '在库'}} {{item.place == null ? '' : ' / ' +item.place }}</text>
       </view>
     </view>
     <view class="space"></view>

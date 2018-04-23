@@ -1,4 +1,8 @@
 /**index.wxss**/
+.container{
+  padding-top:5px; 
+}
+
 .list{
   margin-top:10px;
   width:100%;
