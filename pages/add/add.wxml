@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-<view class="row">
+  <view class="row">
     <image class="image" src='{{book.image}}'></image>
   </view>
   <view class="row">
@@ -25,7 +25,11 @@
   </view>
   <view class="row">
     <label class="title">详情:</label>
-     <input class="input-text" type='text' value='{{book.details}}' />
+    <textarea>{{book.details}}</textarea>
+  </view>
+  <view class="row">
+    <label class="title">目录:</label>
+    <textarea>{{book.content}}</textarea>
   </view>
   <view class="row">
     <label class="title">类型:</label>

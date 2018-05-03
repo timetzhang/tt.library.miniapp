@@ -24,8 +24,9 @@ Page({
   },
 
   bindTapAdd: function () {
-
+    var self = this;
     var valid = true; //检查data
+
     if (self.data.book.name == '' && self.data.book.name == null) {
       valid = false;
     }
@@ -36,8 +37,6 @@ Page({
       valid = false;
     }
 
-    var self = this;
-
     if (valid) {
       wx.request({
         url: 'https://www.zhangtt.cn/library/newBook',
@@ -45,9 +44,9 @@ Page({
         method: 'POST',
         success: function (res) {
           if (res.data) {
-            self.setData({
-              book: res.data
-            });
+            wx.navigateTo({
+              url: '../index/index',
+            })
           }
         }
       });

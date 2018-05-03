@@ -4,10 +4,10 @@
     <text>TT的图书馆</text>
   </view>
   <view>
-    <image src='/images/logo.png' id="home-logo"></image>
+    <image src='/images/logo.png' id="home-logo" bindlongtap='btnAddBook'></image>
   </view>
   <view>
-    <input class="search-input" placeholder="搜索书籍" confirm-type="search" bindconfirm="bindSearchTap" auto-focus />
+    <input class="search-input" placeholder="搜索书籍" confirm-type="search" bindconfirm="bindSearchTap" auto-focus value='{{keyword}}' />
   </view>
   <text class="buttom-text">书是最好的朋友，也是最大的财富</text>
 </view>

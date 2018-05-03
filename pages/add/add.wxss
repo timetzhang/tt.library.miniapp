@@ -30,3 +30,8 @@
 .btn-add{
   width: 200px;
 }
+
+textarea{
+  max-height:50px;
+  overflow-y: scroll;
+}

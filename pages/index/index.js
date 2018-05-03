@@ -7,13 +7,24 @@ Page({
     keyword: ''
   },
 
-  bindSearchTap: function(e) {
-    console.log(e.detail.value)
-    wx.navigateTo({
-      url: '../list/list?keyword=' + e.detail.value
+  bindSearchTap: function (e) {
+    if (e.detail.value) {
+      wx.navigateTo({
+        url: '../list/list?keyword=' + e.detail.value
+      })
+    }
+  },
+
+  btnAddBook: function () {
+    wx.scanCode({
+      success: (res) => {
+        wx.navigateTo({
+          url: '../add/add?keyword=' + res.result
+        })
+      }
     })
   },
-  
+
   onLoad: function () {
   }
 })
