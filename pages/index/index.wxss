@@ -1,7 +1,8 @@
 /**index.wxss**/
 #home-logo{
-  width: 128px;
-  height:128px;
+  margin:20px 0;
+  width: 84px;
+  height:84px;
 }
 
 .search-input{

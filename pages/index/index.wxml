@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view>
-    <text>TT的图书馆</text>
+    <text>tt的图书馆</text>
   </view>
   <view>
     <image src='/images/logo.png' id="home-logo" bindlongtap='btnAddBook'></image>
