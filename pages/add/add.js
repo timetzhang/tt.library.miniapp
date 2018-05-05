@@ -59,10 +59,9 @@ Page({
             })
           }
           else{
-            wx.showToast({
+            wx.showModal({
               title: '上传失败',
-              icon: 'none',
-              duration: 2000
+              content: res.data.sqlMessage,
             })
           }
         },
