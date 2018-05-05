@@ -1,5 +1,6 @@
 //index.js
 //获取应用实例
+import index from "../index/index.js"
 const app = getApp()
 
 Page({
@@ -45,16 +46,41 @@ Page({
         method: 'POST',
         success: (res) => {
           if (res.data.affectedRows > 0) {
-            wx.showToast({
-              title: '成功',
-              icon: 'success',
-              duration: 1000,
-              success: ()=>{
-                setTimeout(()=> {
-                  wx.navigateTo({
-                    url: '../index/index',
+            wx.showModal({
+              title: '添加成功',
+              content: '是否继续添加?',
+              success: function(resModal){
+                if(resModal.confirm){
+                  //再一次进行扫码添加书籍
+                  wx.scanCode({
+                    success: (resScanCode) => {
+                      wx.request({
+                        url: 'https://www.zhangtt.cn/library/searchBook?search=' + resScanCode.result,
+                        success: function (resRequest) {
+                          if (resRequest.data.length > 0) {
+                            wx.showModal({
+                              title: '本书已存在',
+                              content: '是否继续添加?',
+                              success: function (resModal) {
+                                if (resModal.confirm) {
+                                  wx.redirectTo({
+                                    url: '../add/add?keyword=' + resScanCode.result
+                                  })
+                                }
+                              }
+                            })
+                          }
+                          else {
+                            wx.redirectTo({
+                              url: '../add/add?keyword=' + resScanCode.result
+                            })
+                          }
+                        }
+                      })
+                    }
                   })
-                }, 1000)
+
+                }
               }
             })
           }
@@ -66,10 +92,9 @@ Page({
           }
         },
         fail: ()=>{
-          wx.showToast({
+          wx.showModal({
             title: '上传失败',
-            icon: 'none',
-            duration: 2000
+            content: '数据请求失败, 请检查网络连接。',
           })
         }
       });

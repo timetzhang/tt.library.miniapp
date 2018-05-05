@@ -17,10 +17,32 @@ Page({
 
   btnAddBook: function () {
     wx.scanCode({
-      success: (res) => {
-        wx.navigateTo({
-          url: '../add/add?keyword=' + res.result
+      success: (resScanCode) => {
+        
+        wx.request({
+          url: 'https://www.zhangtt.cn/library/searchBook?search=' + resScanCode.result,
+          success: function (resRequest) {
+            if (resRequest.data.length > 0) {
+              wx.showModal({
+                title: '本书已存在',
+                content: '是否继续添加?',
+                success: function(resModal){
+                  if (resModal.confirm){
+                    wx.navigateTo({
+                      url: '../add/add?keyword=' + resScanCode.result
+                    })
+                  }
+                }
+              })
+            }
+            else{
+              wx.navigateTo({
+                url: '../add/add?keyword=' + resScanCode.result
+              })
+            }
+          }
         })
+        
       }
     })
   },
