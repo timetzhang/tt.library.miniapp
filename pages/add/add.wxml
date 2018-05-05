@@ -5,43 +5,35 @@
   </view>
   <view class="row">
     <view class="title">书名:</view>
-    <input class="input-text" type='text' value='{{book.name}}' />
+    <input class="input-text" type='text' value='{{book.name}}' data-id='name' bindinput='inputUpdate' />
   </view>
   <view class="row">
     <label class="title">作者:</label>
-    <input class="input-text" type='text' value='{{book.author}}' />
+    <input class="input-text" type='text' value='{{book.author}}' data-id='author' bindinput='inputUpdate' />
   </view>
   <view class="row">
     <label class="title">价格:</label>
-    <input class="input-text" type='text' value='{{book.price}}' />
+    <input class="input-text" type='text' value='{{book.price}}' data-id='price' bindinput='inputUpdate' />
   </view>
   <view class="row">
     <label class="title">出版社:</label>
-    <input class="input-text" type='text' value='{{book.publisher}}' />
+    <input class="input-text" type='text' value='{{book.publisher}}' data-id='publisher' bindinput='inputUpdate' />
   </view>
   <view class="row">
     <label class="title">出版时间:</label>
-    <input class="input-text" type='text' value='{{book.year}}' />
-  </view>
-  <view class="row">
-    <label class="title">详情:</label>
-    <textarea>{{book.details}}</textarea>
-  </view>
-  <view class="row">
-    <label class="title">目录:</label>
-    <textarea>{{book.content}}</textarea>
+    <input class="input-text" type='text' value='{{book.year}}' data-id='year' bindinput='inputUpdate' />
   </view>
   <view class="row">
     <label class="title">类型:</label>
-    <input class="input-text" type='text' value='{{book.type}}' />
+    <input class="input-text" type='text' value='{{book.type}}' data-id='type' bindinput='inputUpdate' />
   </view>
   <view class="row">
     <label class="title">是否在库:</label>
-    <input class="input-text" type='text' value='{{book.status}}' />
+    <input class="input-text" type='text' value='{{book.status}}' data-id='status' bindinput='inputUpdate' />
   </view>
   <view class="row">
     <label class="title">书籍位置:</label>
-    <input class="input-text" type='text' value='{{book.place}}' />
+    <input class="input-text" type='text' value='{{book.place}}' data-id='place' bindinput='inputUpdate' />
   </view>
   
   <view class="info">请核对以上信息，如果正确，请点击添加</view>

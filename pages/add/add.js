@@ -10,7 +10,8 @@ Page({
 
   onLoad: function (options) {
     var self = this;
-
+    
+    //通过扫描的ISBN查询书籍
     wx.request({
       url: 'https://www.zhangtt.cn/library/searchOnlineBook?search=' + options.keyword,
       success: function (res) {
@@ -42,14 +43,45 @@ Page({
         url: 'https://www.zhangtt.cn/library/newBook',
         data: self.data.book,
         method: 'POST',
-        success: function (res) {
-          if (res.data) {
-            wx.navigateTo({
-              url: '../index/index',
+        success: (res) => {
+          if (res.data.affectedRows > 0) {
+            wx.showToast({
+              title: '成功',
+              icon: 'success',
+              duration: 1000,
+              success: ()=>{
+                setTimeout(()=> {
+                  wx.navigateTo({
+                    url: '../index/index',
+                  })
+                }, 1000)
+              }
             })
           }
+          else{
+            wx.showToast({
+              title: '上传失败',
+              icon: 'none',
+              duration: 2000
+            })
+          }
+        },
+        fail: ()=>{
+          wx.showToast({
+            title: '上传失败',
+            icon: 'none',
+            duration: 2000
+          })
         }
       });
     }
+  },
+
+  inputUpdate: function(e){
+    var tempBook = this.data.book
+    tempBook[e.currentTarget.dataset.id] = e.detail.value
+    this.setData({
+      book: tempBook
+    })
   }
 })

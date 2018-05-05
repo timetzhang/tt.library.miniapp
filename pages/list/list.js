@@ -4,7 +4,8 @@ const app = getApp()
 
 Page({
   data: {
-    books: []
+    books: [],
+    detailsMode: 'detailsLess'
   },
   onLoad: function (options) {
     var self = this;
@@ -18,5 +19,15 @@ Page({
         }
       }
     })
+  },
+  showDetail: function(e){
+    if (this.data.detailsMode == 'detailsComplete')
+      this.setData({
+        detailsMode: 'detailsLess'
+      })
+    else
+      this.setData({
+        detailsMode: 'detailsComplete'
+      })
   }
 })
