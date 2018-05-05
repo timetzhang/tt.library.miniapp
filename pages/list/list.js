@@ -5,7 +5,7 @@ const app = getApp()
 Page({
   data: {
     books: [],
-    detailsMode: 'detailsLess'
+    content: ''
   },
   onLoad: function (options) {
     var self = this;
@@ -29,5 +29,18 @@ Page({
       this.setData({
         detailsMode: 'detailsComplete'
       })
+  },
+  bindItemTap: function(e){
+    wx.request({
+      url: 'https://www.zhangtt.cn/library/getBookDetails?id=' + e.currentTarget.dataset.id,
+      success: function(res){
+
+        wx.showModal({
+          title: '详情',
+          content: res.data[0].details,
+        })
+
+      }
+    })
   }
 })

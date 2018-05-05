@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="list" wx:for="{{books}}" wx:key="id"  wx:if="{{books.length > 0}}">
+  <view class="list" wx:for="{{books}}" wx:key="id"  wx:if="{{books.length > 0}}" bindtap='bindItemTap' data-id='{{item.id}}'>
     <image class="image" src="{{item.image}}"></image>
     <view class="meta">
       <view>
@@ -13,13 +13,11 @@
         <text class="publisher">{{item.publisher == null || item.publisher == '' ? '' : item.publisher + ' / '}}  {{item.year == null || item.year == '' ? '' : item.year + ' / '}} {{item.price == null ? '' : item.price}} 元</text>
       </view>
       <view class="space"></view>
-      <view class="{{detailsMode}}" bindtap='showDetail'>
-        <text>{{item.details == null ? '' : item.details }}</text>
-      </view>
       <view>
         <text class="status"> {{item.status == 0 ? '借出' : '在库'}} {{item.place == null ? '' : ' / ' +item.place }}</text>
       </view>
     </view>
+    <view class="spliter"></view>
   </view>
   <view wx:if="{{books.length <= 0}}">没有找到相关书籍</view>
 </view>
