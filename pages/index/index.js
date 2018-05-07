@@ -32,6 +32,11 @@ Page({
                       url: '../add/add?keyword=' + resScanCode.result
                     })
                   }
+                  else{
+                    wx.redirectTo({
+                      url: '../index/index'
+                    })
+                  }
                 }
               })
             }
